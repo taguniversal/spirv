@@ -3,6 +3,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/SPIRV/SPIRV.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/SPIR/SPIR.msd" folder="" />
     </projectModules>
   </component>
 </project>

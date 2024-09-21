@@ -18,6 +18,7 @@
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -42,6 +43,7 @@
     <property role="EcuMT" value="2267553670842702399" />
     <property role="TrG5h" value="Module" />
     <property role="R4oN_" value="A single unit of SPIR-V" />
+    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="1TJgyj" id="1XRY0MNHTX$" role="1TKVEi">
       <property role="IQ2ns" value="2267553670842785636" />
@@ -1379,6 +1381,427 @@
     <property role="EcuMT" value="5332991333435857115" />
     <property role="TrG5h" value="OpUnordered" />
     <ref role="1TJDcQ" node="1XRY0MNHEXs" resolve="Instruction" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FLpw">
+    <property role="EcuMT" value="5332991333435905632" />
+    <property role="TrG5h" value="Capability" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FLpy">
+    <property role="EcuMT" value="5332991333435905634" />
+    <property role="TrG5h" value="CapabilityMatrix" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FLp$">
+    <property role="EcuMT" value="5332991333435905636" />
+    <property role="TrG5h" value="CapabilityShader" />
+    <property role="R5$K2" value="true" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzk">
+    <property role="EcuMT" value="5332991333435926740" />
+    <property role="TrG5h" value="CapabilityGeometry" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzm">
+    <property role="EcuMT" value="5332991333435926742" />
+    <property role="TrG5h" value="CapabilityTesselation" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzo">
+    <property role="EcuMT" value="5332991333435926744" />
+    <property role="TrG5h" value="CapabilityAddresses" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzq">
+    <property role="EcuMT" value="5332991333435926746" />
+    <property role="TrG5h" value="CapabilityLinkage" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzt">
+    <property role="EcuMT" value="5332991333435926749" />
+    <property role="TrG5h" value="CapabilityKernel" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzv">
+    <property role="EcuMT" value="5332991333435926751" />
+    <property role="TrG5h" value="CapabilityVector16" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzx">
+    <property role="EcuMT" value="5332991333435926753" />
+    <property role="TrG5h" value="CapabilityFloat16Buffer" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzz">
+    <property role="EcuMT" value="5332991333435926755" />
+    <property role="TrG5h" value="CapabilityFloat16" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzB">
+    <property role="EcuMT" value="5332991333435926759" />
+    <property role="TrG5h" value="CapabilityInt64Atomics" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzD">
+    <property role="EcuMT" value="5332991333435926761" />
+    <property role="TrG5h" value="CapabilityImageBasic" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzF">
+    <property role="EcuMT" value="5332991333435926763" />
+    <property role="TrG5h" value="CapabilityImageReadWrite" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzH">
+    <property role="EcuMT" value="5332991333435926765" />
+    <property role="TrG5h" value="CapabilityImageMipmap" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzK">
+    <property role="EcuMT" value="5332991333435926768" />
+    <property role="TrG5h" value="CapabilityPipes" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzM">
+    <property role="EcuMT" value="5332991333435926770" />
+    <property role="TrG5h" value="CapabilityGroups" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzO">
+    <property role="EcuMT" value="5332991333435926772" />
+    <property role="TrG5h" value="CapabilityDeviceEnqueue" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzQ">
+    <property role="EcuMT" value="5332991333435926774" />
+    <property role="TrG5h" value="CapabilityLiteralSampler" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzS">
+    <property role="EcuMT" value="5332991333435926776" />
+    <property role="TrG5h" value="CapabilityAtomicStorage" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzU">
+    <property role="EcuMT" value="5332991333435926778" />
+    <property role="TrG5h" value="CapabilityInt16" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzW">
+    <property role="EcuMT" value="5332991333435926780" />
+    <property role="TrG5h" value="CapabilityTesselationPointSize" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQzY">
+    <property role="EcuMT" value="5332991333435926782" />
+    <property role="TrG5h" value="CapabilityGeometryPointSize" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$0">
+    <property role="EcuMT" value="5332991333435926784" />
+    <property role="TrG5h" value="CapabilityImageGatherExtended" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$2">
+    <property role="EcuMT" value="5332991333435926786" />
+    <property role="TrG5h" value="CapabilityStorageImageMultisample" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$5">
+    <property role="EcuMT" value="5332991333435926789" />
+    <property role="TrG5h" value="CapabilityUniformBufferArrayDynammicIndexingBlock" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$8">
+    <property role="EcuMT" value="5332991333435926792" />
+    <property role="TrG5h" value="CapabilitySampledImageArrayDynamicIndexing" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$c">
+    <property role="EcuMT" value="5332991333435926796" />
+    <property role="TrG5h" value="CapabilityStorageBufferArrayDynamicIndexing" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$e">
+    <property role="EcuMT" value="5332991333435926798" />
+    <property role="TrG5h" value="CapabilityStorageImageArrayDynamicIndexing" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$g">
+    <property role="EcuMT" value="5332991333435926800" />
+    <property role="TrG5h" value="CapabilityClipDistance" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$j">
+    <property role="EcuMT" value="5332991333435926803" />
+    <property role="TrG5h" value="CapabilityCullDistance" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$l">
+    <property role="EcuMT" value="5332991333435926805" />
+    <property role="TrG5h" value="CapabilityImageCubeArray" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$n">
+    <property role="EcuMT" value="5332991333435926807" />
+    <property role="TrG5h" value="CapabiiltySampleRateShading" />
+    <property role="R5$K2" value="true" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$p">
+    <property role="EcuMT" value="5332991333435926809" />
+    <property role="TrG5h" value="CapabiityImageRect" />
+    <property role="R5$K2" value="true" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$r">
+    <property role="EcuMT" value="5332991333435926811" />
+    <property role="TrG5h" value="CapabilitySampledRect" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$t">
+    <property role="EcuMT" value="5332991333435926813" />
+    <property role="TrG5h" value="CapabiityGenericPointer" />
+    <property role="R5$K2" value="true" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$v">
+    <property role="EcuMT" value="5332991333435926815" />
+    <property role="TrG5h" value="CapabilityGenericPointer" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$x">
+    <property role="EcuMT" value="5332991333435926817" />
+    <property role="TrG5h" value="CapabilityInt8" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$z">
+    <property role="EcuMT" value="5332991333435926819" />
+    <property role="TrG5h" value="CapabiityInputAttachment" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$_">
+    <property role="EcuMT" value="5332991333435926821" />
+    <property role="TrG5h" value="CapabilitySparseResidency" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$B">
+    <property role="EcuMT" value="5332991333435926823" />
+    <property role="TrG5h" value="CapabilityMintLod" />
+    <property role="R5$K2" value="true" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$E">
+    <property role="EcuMT" value="5332991333435926826" />
+    <property role="TrG5h" value="CapabilityFloat64" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$I">
+    <property role="EcuMT" value="5332991333435926830" />
+    <property role="TrG5h" value="CapabilityInt64" />
+    <ref role="1TJDcQ" node="1XRY0MNHEXs" resolve="Instruction" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$N">
+    <property role="EcuMT" value="5332991333435926835" />
+    <property role="TrG5h" value="CapabilityImageBuffer" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$P">
+    <property role="EcuMT" value="5332991333435926837" />
+    <property role="TrG5h" value="CapabilityImageMSArray" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FQ$R">
+    <property role="EcuMT" value="5332991333435926839" />
+    <property role="TrG5h" value="CapabilityStorageImageExtendedFormats" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIu">
+    <property role="EcuMT" value="5332991333435952030" />
+    <property role="TrG5h" value="CapabilityInterpolationFunction" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIw">
+    <property role="EcuMT" value="5332991333435952032" />
+    <property role="TrG5h" value="CapabilityTransformFeedback" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIz">
+    <property role="EcuMT" value="5332991333435952035" />
+    <property role="TrG5h" value="CapabilityGeometryStreams" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWI_">
+    <property role="EcuMT" value="5332991333435952037" />
+    <property role="TrG5h" value="CapabilityInputAttachment" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIC">
+    <property role="EcuMT" value="5332991333435952040" />
+    <property role="TrG5h" value="CapabilityImageReadWithoutFormat" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIE">
+    <property role="EcuMT" value="5332991333435952042" />
+    <property role="TrG5h" value="CapabilityStorageImageReadWithoutFormat" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIG">
+    <property role="EcuMT" value="5332991333435952044" />
+    <property role="TrG5h" value="CapabilityStorageImageWriteWithoutFormat" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWII">
+    <property role="EcuMT" value="5332991333435952046" />
+    <property role="TrG5h" value="CapabilitySampled1D" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIK">
+    <property role="EcuMT" value="5332991333435952048" />
+    <property role="TrG5h" value="CapabilitySampled2D" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIM">
+    <property role="EcuMT" value="5332991333435952050" />
+    <property role="TrG5h" value="CapabilitySampled3D" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIO">
+    <property role="EcuMT" value="5332991333435952052" />
+    <property role="TrG5h" value="CapabilitySampledCube" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIR">
+    <property role="EcuMT" value="5332991333435952055" />
+    <property role="TrG5h" value="CapabilityStorageBuffrer16BitAccess" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3FWIT">
+    <property role="EcuMT" value="5332991333435952057" />
+    <property role="TrG5h" value="CapabilityUniformBuffer16BitAccess" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3bL">
+    <property role="EcuMT" value="5332991333435978481" />
+    <property role="TrG5h" value="CapabilityAtomicFloat32Add" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3bN">
+    <property role="EcuMT" value="5332991333435978483" />
+    <property role="TrG5h" value="CapabilityAtomicFloat32MinMax" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3bP">
+    <property role="EcuMT" value="5332991333435978485" />
+    <property role="TrG5h" value="CapabilityAtomicFloat64Add" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3bR">
+    <property role="EcuMT" value="5332991333435978487" />
+    <property role="TrG5h" value="CapabilityAtomicFloat64MinMax" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3bT">
+    <property role="EcuMT" value="5332991333435978489" />
+    <property role="TrG5h" value="CapabilitySampledBuffer" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3bZ">
+    <property role="EcuMT" value="5332991333435978495" />
+    <property role="TrG5h" value="CapabilityDerivativeControl" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3c1">
+    <property role="EcuMT" value="5332991333435978497" />
+    <property role="TrG5h" value="CapabilityDeviceGroup" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3c3">
+    <property role="EcuMT" value="5332991333435978499" />
+    <property role="TrG5h" value="CapabiityAtomicInt64" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3c6">
+    <property role="EcuMT" value="5332991333435978502" />
+    <property role="TrG5h" value="CapabilityAtomicInt32" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3c8">
+    <property role="EcuMT" value="5332991333435978504" />
+    <property role="TrG5h" value="CapabilithyAtomicInt16" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3ca">
+    <property role="EcuMT" value="5332991333435978506" />
+    <property role="TrG5h" value="CapabilityAtomicInt8" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cc">
+    <property role="EcuMT" value="5332991333435978508" />
+    <property role="TrG5h" value="CapabilityMultiViewPort" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3ce">
+    <property role="EcuMT" value="5332991333435978510" />
+    <property role="TrG5h" value="CapabilityShaderLayer" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cg">
+    <property role="EcuMT" value="5332991333435978512" />
+    <property role="TrG5h" value="CapabilityShaderViewPortIndex" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cj">
+    <property role="EcuMT" value="5332991333435978515" />
+    <property role="TrG5h" value="CapabilityGroupNonUniform" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cl">
+    <property role="EcuMT" value="5332991333435978517" />
+    <property role="TrG5h" value="CapabilityGroupNonUniformVote" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cn">
+    <property role="EcuMT" value="5332991333435978519" />
+    <property role="TrG5h" value="CapabilityGroupNonUniformBallot" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cp">
+    <property role="EcuMT" value="5332991333435978521" />
+    <property role="TrG5h" value="CapabilityGroupNonUniformShuffle" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3cr">
+    <property role="EcuMT" value="5332991333435978523" />
+    <property role="TrG5h" value="CapabilityGroupNonUniformRelative" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3G3ct">
+    <property role="EcuMT" value="5332991333435978525" />
+    <property role="TrG5h" value="CapabilityGroupNonUniformShuffleRelative" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3Gh4p">
+    <property role="EcuMT" value="5332991333436035353" />
+    <property role="TrG5h" value="CapabiityGroupNonUniformQuad" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3Gh4r">
+    <property role="EcuMT" value="5332991333436035355" />
+    <property role="TrG5h" value="CapabilitySubgroupVoteKHR" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3Gh4u">
+    <property role="EcuMT" value="5332991333436035358" />
+    <property role="TrG5h" value="CapabilitySubgroupBallotKHR" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
+  </node>
+  <node concept="1TIwiD" id="4C2_PN3Gh4w">
+    <property role="EcuMT" value="5332991333436035360" />
+    <property role="TrG5h" value="CapabilityShaderClockKHR" />
+    <ref role="1TJDcQ" node="4C2_PN3FLpw" resolve="Capability" />
   </node>
 </model>
 
