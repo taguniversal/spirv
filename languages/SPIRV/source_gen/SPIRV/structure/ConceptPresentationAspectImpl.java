@@ -9,6 +9,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_AccessQualifier;
+  private ConceptPresentation props_AccessQualifierReadOnly;
+  private ConceptPresentation props_AccessQualifierReadWrite;
+  private ConceptPresentation props_AccessQualifierWriteOnly;
+  private ConceptPresentation props_AddressingModel;
+  private ConceptPresentation props_AddressingModelLogical;
+  private ConceptPresentation props_AddressingModelPhysical32;
+  private ConceptPresentation props_AddressingModelPhysical64;
+  private ConceptPresentation props_AddressingModelPhysicalStorageBuffer64;
+  private ConceptPresentation props_AddressingModelPhysicalStorageBuffer64EXT;
   private ConceptPresentation props_AnnotationInstruction;
   private ConceptPresentation props_BackEdge;
   private ConceptPresentation props_BackEdgeBlock;
@@ -16,12 +26,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BlockTerminationInstruction;
   private ConceptPresentation props_BranchEdge;
   private ConceptPresentation props_BranchInstruction;
+  private ConceptPresentation props_BranchTarget;
   private ConceptPresentation props_Byte;
   private ConceptPresentation props_CallableDataKHR;
   private ConceptPresentation props_CallableDataNV;
   private ConceptPresentation props_CapabiiltySampleRateShading;
   private ConceptPresentation props_CapabiityAtomicInt64;
   private ConceptPresentation props_CapabiityGenericPointer;
+  private ConceptPresentation props_CapabiityGroupNonUniformQuad;
   private ConceptPresentation props_CapabiityImageRect;
   private ConceptPresentation props_CapabiityInputAttachment;
   private ConceptPresentation props_CapabilithyAtomicInt16;
@@ -82,6 +94,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CapabilitySampledImageArrayDynamicIndexing;
   private ConceptPresentation props_CapabilitySampledRect;
   private ConceptPresentation props_CapabilityShader;
+  private ConceptPresentation props_CapabilityShaderClockKHR;
   private ConceptPresentation props_CapabilityShaderLayer;
   private ConceptPresentation props_CapabilityShaderViewPortIndex;
   private ConceptPresentation props_CapabilitySparseResidency;
@@ -92,6 +105,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CapabilityStorageImageMultisample;
   private ConceptPresentation props_CapabilityStorageImageReadWithoutFormat;
   private ConceptPresentation props_CapabilityStorageImageWriteWithoutFormat;
+  private ConceptPresentation props_CapabilitySubgroupBallotKHR;
+  private ConceptPresentation props_CapabilitySubgroupVoteKHR;
   private ConceptPresentation props_CapabilityTesselation;
   private ConceptPresentation props_CapabilityTesselationPointSize;
   private ConceptPresentation props_CapabilityTransformFeedback;
@@ -102,16 +117,95 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ContinueEdge;
   private ConceptPresentation props_DebugInstruction;
   private ConceptPresentation props_Decoration;
-  private ConceptPresentation props_EntryPoint;
+  private ConceptPresentation props_Dim;
+  private ConceptPresentation props_Dim1D;
+  private ConceptPresentation props_Dim2D;
+  private ConceptPresentation props_Dim3D;
+  private ConceptPresentation props_DimBuffer;
+  private ConceptPresentation props_DimCube;
+  private ConceptPresentation props_DimRect;
+  private ConceptPresentation props_DimSubpassData;
+  private ConceptPresentation props_DimTileImageDataEXT;
+  private ConceptPresentation props_ExdcutionModelTaskEXT;
+  private ConceptPresentation props_ExecutionMode;
   private ConceptPresentation props_ExecutionModeDeclaration;
+  private ConceptPresentation props_ExecutionModeDepthGreater;
+  private ConceptPresentation props_ExecutionModeDepthLess;
+  private ConceptPresentation props_ExecutionModeDepthReplacing;
+  private ConceptPresentation props_ExecutionModeDepthUnchanged;
+  private ConceptPresentation props_ExecutionModeEarlyFragmentTests;
+  private ConceptPresentation props_ExecutionModeInputLines;
+  private ConceptPresentation props_ExecutionModeInputLinesAdjacency;
+  private ConceptPresentation props_ExecutionModeInputPoints;
+  private ConceptPresentation props_ExecutionModeInputTrianglesAdjacency;
+  private ConceptPresentation props_ExecutionModeInvocations;
+  private ConceptPresentation props_ExecutionModeIsoLines;
+  private ConceptPresentation props_ExecutionModeLocalSize;
+  private ConceptPresentation props_ExecutionModeLocalSizeHing;
+  private ConceptPresentation props_ExecutionModeOriginLowerLeft;
+  private ConceptPresentation props_ExecutionModeOriginUpperLeft;
+  private ConceptPresentation props_ExecutionModeOutputLineStrip;
+  private ConceptPresentation props_ExecutionModeOutputPoints;
+  private ConceptPresentation props_ExecutionModeOutputTriangleStrip;
+  private ConceptPresentation props_ExecutionModeOutputVertices;
+  private ConceptPresentation props_ExecutionModePointMode;
+  private ConceptPresentation props_ExecutionModeQuads;
+  private ConceptPresentation props_ExecutionModeSpacingEqual;
+  private ConceptPresentation props_ExecutionModeSpacingFractionalEven;
+  private ConceptPresentation props_ExecutionModeSpacingFractionalOdd;
+  private ConceptPresentation props_ExecutionModeTriangles;
+  private ConceptPresentation props_ExecutionModeVertexOrderCcw;
+  private ConceptPresentation props_ExecutionModeVertexOrderCw;
+  private ConceptPresentation props_ExecutionModeXfb;
+  private ConceptPresentation props_ExecutionModel;
+  private ConceptPresentation props_ExecutionModelAnyHitKHR;
+  private ConceptPresentation props_ExecutionModelAnyHitNV;
+  private ConceptPresentation props_ExecutionModelCallableKHR;
+  private ConceptPresentation props_ExecutionModelCallableNV;
+  private ConceptPresentation props_ExecutionModelClosestHitKHR;
+  private ConceptPresentation props_ExecutionModelClosestHitNV;
+  private ConceptPresentation props_ExecutionModelFragment;
+  private ConceptPresentation props_ExecutionModelGLCompute;
+  private ConceptPresentation props_ExecutionModelGeometry;
+  private ConceptPresentation props_ExecutionModelIntersectionKHR;
+  private ConceptPresentation props_ExecutionModelIntersectionNV;
+  private ConceptPresentation props_ExecutionModelKernel;
+  private ConceptPresentation props_ExecutionModelMeshEXT;
+  private ConceptPresentation props_ExecutionModelMeshNV;
+  private ConceptPresentation props_ExecutionModelMissKHR;
+  private ConceptPresentation props_ExecutionModelRayGenerationKHR;
+  private ConceptPresentation props_ExecutionModelRayGenerationNV;
+  private ConceptPresentation props_ExecutionModelTaskNV;
+  private ConceptPresentation props_ExecutionModelTesselationControl;
+  private ConceptPresentation props_ExecutionModelTesselationEvaluation;
+  private ConceptPresentation props_ExecutionModelVertex;
+  private ConceptPresentation props_ExeecutionModePixelCenterInteger;
+  private ConceptPresentation props_ExtensionInstruction;
+  private ConceptPresentation props_FunctionDeclaration;
+  private ConceptPresentation props_FunctionDefinition;
   private ConceptPresentation props_FunctionTerminationInstruction;
+  private ConceptPresentation props_GlobalVariableDeclaration;
   private ConceptPresentation props_HeaderBlock;
   private ConceptPresentation props_Id;
+  private ConceptPresentation props_ImageFormat;
+  private ConceptPresentation props_ImageFormatR32f;
+  private ConceptPresentation props_ImageFormatRgba16f;
+  private ConceptPresentation props_ImageFormatRgba32f;
+  private ConceptPresentation props_ImageFormatRgba8;
+  private ConceptPresentation props_ImageFormatUnkown;
   private ConceptPresentation props_IncomingCallableDataKHR;
   private ConceptPresentation props_IncomingCallableDataNV;
   private ConceptPresentation props_Instruction;
   private ConceptPresentation props_Literal;
+  private ConceptPresentation props_LiteralNumeric;
+  private ConceptPresentation props_LiteralString;
   private ConceptPresentation props_LoopHeader;
+  private ConceptPresentation props_MemoryModel;
+  private ConceptPresentation props_MemoryModelGLSL450;
+  private ConceptPresentation props_MemoryModelOpenCL;
+  private ConceptPresentation props_MemoryModelSimple;
+  private ConceptPresentation props_MemoryModelVulkan;
+  private ConceptPresentation props_MemoryModelVulkanKHR;
   private ConceptPresentation props_MemoryObject;
   private ConceptPresentation props_MemoryObjectDeclaration;
   private ConceptPresentation props_MergeBlock;
@@ -121,7 +215,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodeOutputPayloadAMDX;
   private ConceptPresentation props_NodePayloadAMDX;
   private ConceptPresentation props_NonSemanticInstruction;
-  private ConceptPresentation props_NumericalName;
   private ConceptPresentation props_Object;
   private ConceptPresentation props_OpAll;
   private ConceptPresentation props_OpAny;
@@ -152,6 +245,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OpExecutionModeId;
   private ConceptPresentation props_OpExtInst;
   private ConceptPresentation props_OpExtInstImport;
+  private ConceptPresentation props_OpExtInstWithForwardReftsKHR;
   private ConceptPresentation props_OpExtension;
   private ConceptPresentation props_OpFOrdEqual;
   private ConceptPresentation props_OpFOrdGreaterThan;
@@ -159,9 +253,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OpFOrdLessThan;
   private ConceptPresentation props_OpFOrdLessThanEqual;
   private ConceptPresentation props_OpFOrdNotEqual;
-  private ConceptPresentation props_OpFUnorcGreaterThanEqual;
   private ConceptPresentation props_OpFUnordEqual;
   private ConceptPresentation props_OpFUnordGreaterThan;
+  private ConceptPresentation props_OpFUnordGreaterThanEqual;
   private ConceptPresentation props_OpFUnordLessThan;
   private ConceptPresentation props_OpFUnordLessThanEqual;
   private ConceptPresentation props_OpFUnordNotEqual;
@@ -180,6 +274,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OpKill;
   private ConceptPresentation props_OpLabel;
   private ConceptPresentation props_OpLessOrGreater;
+  private ConceptPresentation props_OpLine;
   private ConceptPresentation props_OpLoad;
   private ConceptPresentation props_OpLogicalAnd;
   private ConceptPresentation props_OpLogicalEqual;
@@ -192,6 +287,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OpMemoryModel;
   private ConceptPresentation props_OpModuleProcessed;
   private ConceptPresentation props_OpName;
+  private ConceptPresentation props_OpNoLine;
   private ConceptPresentation props_OpNot;
   private ConceptPresentation props_OpOrdered;
   private ConceptPresentation props_OpPhi;
@@ -236,6 +332,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_OpTypeReverseId;
   private ConceptPresentation props_OpTypeSampledImage;
   private ConceptPresentation props_OpTypeSampler;
+  private ConceptPresentation props_OpTypeStruct;
   private ConceptPresentation props_OpTypeVariable;
   private ConceptPresentation props_OpTypeVector;
   private ConceptPresentation props_OpTypeVoid;
@@ -249,12 +346,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Operand;
   private ConceptPresentation props_Path;
   private ConceptPresentation props_Result;
+  private ConceptPresentation props_Scalar;
   private ConceptPresentation props_SelectionHeader;
+  private ConceptPresentation props_Signedness;
+  private ConceptPresentation props_SignednessSigned;
+  private ConceptPresentation props_SignednessUnsigned;
   private ConceptPresentation props_StorageClass;
   private ConceptPresentation props_StorageClassAtomicCounter;
   private ConceptPresentation props_StorageClassBuffer;
   private ConceptPresentation props_StorageClassCrossWorkgroup;
   private ConceptPresentation props_StorageClassFunction;
+  private ConceptPresentation props_StorageClassGeneric;
   private ConceptPresentation props_StorageClassHitAttributeKHR;
   private ConceptPresentation props_StorageClassHitAttributeNV;
   private ConceptPresentation props_StorageClassImage;
@@ -301,6 +403,74 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AccessQualifier:
+        if (props_AccessQualifier == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AccessQualifier = cpb.create();
+        }
+        return props_AccessQualifier;
+      case LanguageConceptSwitch.AccessQualifierReadOnly:
+        if (props_AccessQualifierReadOnly == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AccessQualifierReadOnly");
+          props_AccessQualifierReadOnly = cpb.create();
+        }
+        return props_AccessQualifierReadOnly;
+      case LanguageConceptSwitch.AccessQualifierReadWrite:
+        if (props_AccessQualifierReadWrite == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AccessQualifierReadWrite");
+          props_AccessQualifierReadWrite = cpb.create();
+        }
+        return props_AccessQualifierReadWrite;
+      case LanguageConceptSwitch.AccessQualifierWriteOnly:
+        if (props_AccessQualifierWriteOnly == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AccessQualifierWriteOnly");
+          props_AccessQualifierWriteOnly = cpb.create();
+        }
+        return props_AccessQualifierWriteOnly;
+      case LanguageConceptSwitch.AddressingModel:
+        if (props_AddressingModel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AddressingModel = cpb.create();
+        }
+        return props_AddressingModel;
+      case LanguageConceptSwitch.AddressingModelLogical:
+        if (props_AddressingModelLogical == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AddressingModelLogical");
+          props_AddressingModelLogical = cpb.create();
+        }
+        return props_AddressingModelLogical;
+      case LanguageConceptSwitch.AddressingModelPhysical32:
+        if (props_AddressingModelPhysical32 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AddressingModelPhysical32");
+          props_AddressingModelPhysical32 = cpb.create();
+        }
+        return props_AddressingModelPhysical32;
+      case LanguageConceptSwitch.AddressingModelPhysical64:
+        if (props_AddressingModelPhysical64 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AddressingModelPhysical64");
+          props_AddressingModelPhysical64 = cpb.create();
+        }
+        return props_AddressingModelPhysical64;
+      case LanguageConceptSwitch.AddressingModelPhysicalStorageBuffer64:
+        if (props_AddressingModelPhysicalStorageBuffer64 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AddressingModelPhysicalStorageBuffer64");
+          props_AddressingModelPhysicalStorageBuffer64 = cpb.create();
+        }
+        return props_AddressingModelPhysicalStorageBuffer64;
+      case LanguageConceptSwitch.AddressingModelPhysicalStorageBuffer64EXT:
+        if (props_AddressingModelPhysicalStorageBuffer64EXT == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AddressingModelPhysicalStorageBuffer64EXT");
+          props_AddressingModelPhysicalStorageBuffer64EXT = cpb.create();
+        }
+        return props_AddressingModelPhysicalStorageBuffer64EXT;
       case LanguageConceptSwitch.AnnotationInstruction:
         if (props_AnnotationInstruction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -348,6 +518,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BranchInstruction = cpb.create();
         }
         return props_BranchInstruction;
+      case LanguageConceptSwitch.BranchTarget:
+        if (props_BranchTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BranchTarget");
+          props_BranchTarget = cpb.create();
+        }
+        return props_BranchTarget;
       case LanguageConceptSwitch.Byte:
         if (props_Byte == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -390,6 +567,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CapabiityGenericPointer = cpb.create();
         }
         return props_CapabiityGenericPointer;
+      case LanguageConceptSwitch.CapabiityGroupNonUniformQuad:
+        if (props_CapabiityGroupNonUniformQuad == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CapabiityGroupNonUniformQuad");
+          props_CapabiityGroupNonUniformQuad = cpb.create();
+        }
+        return props_CapabiityGroupNonUniformQuad;
       case LanguageConceptSwitch.CapabiityImageRect:
         if (props_CapabiityImageRect == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -809,6 +993,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CapabilityShader = cpb.create();
         }
         return props_CapabilityShader;
+      case LanguageConceptSwitch.CapabilityShaderClockKHR:
+        if (props_CapabilityShaderClockKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CapabilityShaderClockKHR");
+          props_CapabilityShaderClockKHR = cpb.create();
+        }
+        return props_CapabilityShaderClockKHR;
       case LanguageConceptSwitch.CapabilityShaderLayer:
         if (props_CapabilityShaderLayer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -879,6 +1070,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CapabilityStorageImageWriteWithoutFormat = cpb.create();
         }
         return props_CapabilityStorageImageWriteWithoutFormat;
+      case LanguageConceptSwitch.CapabilitySubgroupBallotKHR:
+        if (props_CapabilitySubgroupBallotKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CapabilitySubgroupBallotKHR");
+          props_CapabilitySubgroupBallotKHR = cpb.create();
+        }
+        return props_CapabilitySubgroupBallotKHR;
+      case LanguageConceptSwitch.CapabilitySubgroupVoteKHR:
+        if (props_CapabilitySubgroupVoteKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CapabilitySubgroupVoteKHR");
+          props_CapabilitySubgroupVoteKHR = cpb.create();
+        }
+        return props_CapabilitySubgroupVoteKHR;
       case LanguageConceptSwitch.CapabilityTesselation:
         if (props_CapabilityTesselation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -948,25 +1153,476 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Decoration = cpb.create();
         }
         return props_Decoration;
-      case LanguageConceptSwitch.EntryPoint:
-        if (props_EntryPoint == null) {
+      case LanguageConceptSwitch.Dim:
+        if (props_Dim == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("EntryPoint");
-          props_EntryPoint = cpb.create();
+          props_Dim = cpb.create();
         }
-        return props_EntryPoint;
+        return props_Dim;
+      case LanguageConceptSwitch.Dim1D:
+        if (props_Dim1D == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Dim1D");
+          props_Dim1D = cpb.create();
+        }
+        return props_Dim1D;
+      case LanguageConceptSwitch.Dim2D:
+        if (props_Dim2D == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Dim2D");
+          props_Dim2D = cpb.create();
+        }
+        return props_Dim2D;
+      case LanguageConceptSwitch.Dim3D:
+        if (props_Dim3D == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Dim3D");
+          props_Dim3D = cpb.create();
+        }
+        return props_Dim3D;
+      case LanguageConceptSwitch.DimBuffer:
+        if (props_DimBuffer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DimBuffer");
+          props_DimBuffer = cpb.create();
+        }
+        return props_DimBuffer;
+      case LanguageConceptSwitch.DimCube:
+        if (props_DimCube == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DimCube");
+          props_DimCube = cpb.create();
+        }
+        return props_DimCube;
+      case LanguageConceptSwitch.DimRect:
+        if (props_DimRect == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DimRect");
+          props_DimRect = cpb.create();
+        }
+        return props_DimRect;
+      case LanguageConceptSwitch.DimSubpassData:
+        if (props_DimSubpassData == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DimSubpassData");
+          props_DimSubpassData = cpb.create();
+        }
+        return props_DimSubpassData;
+      case LanguageConceptSwitch.DimTileImageDataEXT:
+        if (props_DimTileImageDataEXT == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DimTileImageDataEXT");
+          props_DimTileImageDataEXT = cpb.create();
+        }
+        return props_DimTileImageDataEXT;
+      case LanguageConceptSwitch.ExdcutionModelTaskEXT:
+        if (props_ExdcutionModelTaskEXT == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExdcutionModelTaskEXT");
+          props_ExdcutionModelTaskEXT = cpb.create();
+        }
+        return props_ExdcutionModelTaskEXT;
+      case LanguageConceptSwitch.ExecutionMode:
+        if (props_ExecutionMode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExecutionMode = cpb.create();
+        }
+        return props_ExecutionMode;
       case LanguageConceptSwitch.ExecutionModeDeclaration:
         if (props_ExecutionModeDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_ExecutionModeDeclaration = cpb.create();
         }
         return props_ExecutionModeDeclaration;
+      case LanguageConceptSwitch.ExecutionModeDepthGreater:
+        if (props_ExecutionModeDepthGreater == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeDepthGreater");
+          props_ExecutionModeDepthGreater = cpb.create();
+        }
+        return props_ExecutionModeDepthGreater;
+      case LanguageConceptSwitch.ExecutionModeDepthLess:
+        if (props_ExecutionModeDepthLess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeDepthLess");
+          props_ExecutionModeDepthLess = cpb.create();
+        }
+        return props_ExecutionModeDepthLess;
+      case LanguageConceptSwitch.ExecutionModeDepthReplacing:
+        if (props_ExecutionModeDepthReplacing == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeDepthReplacing");
+          props_ExecutionModeDepthReplacing = cpb.create();
+        }
+        return props_ExecutionModeDepthReplacing;
+      case LanguageConceptSwitch.ExecutionModeDepthUnchanged:
+        if (props_ExecutionModeDepthUnchanged == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeDepthUnchanged");
+          props_ExecutionModeDepthUnchanged = cpb.create();
+        }
+        return props_ExecutionModeDepthUnchanged;
+      case LanguageConceptSwitch.ExecutionModeEarlyFragmentTests:
+        if (props_ExecutionModeEarlyFragmentTests == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeEarlyFragmentTests");
+          props_ExecutionModeEarlyFragmentTests = cpb.create();
+        }
+        return props_ExecutionModeEarlyFragmentTests;
+      case LanguageConceptSwitch.ExecutionModeInputLines:
+        if (props_ExecutionModeInputLines == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeInputLines");
+          props_ExecutionModeInputLines = cpb.create();
+        }
+        return props_ExecutionModeInputLines;
+      case LanguageConceptSwitch.ExecutionModeInputLinesAdjacency:
+        if (props_ExecutionModeInputLinesAdjacency == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeInputLinesAdjacency");
+          props_ExecutionModeInputLinesAdjacency = cpb.create();
+        }
+        return props_ExecutionModeInputLinesAdjacency;
+      case LanguageConceptSwitch.ExecutionModeInputPoints:
+        if (props_ExecutionModeInputPoints == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeInputPoints");
+          props_ExecutionModeInputPoints = cpb.create();
+        }
+        return props_ExecutionModeInputPoints;
+      case LanguageConceptSwitch.ExecutionModeInputTrianglesAdjacency:
+        if (props_ExecutionModeInputTrianglesAdjacency == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeInputTrianglesAdjacency");
+          props_ExecutionModeInputTrianglesAdjacency = cpb.create();
+        }
+        return props_ExecutionModeInputTrianglesAdjacency;
+      case LanguageConceptSwitch.ExecutionModeInvocations:
+        if (props_ExecutionModeInvocations == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeInvocations");
+          props_ExecutionModeInvocations = cpb.create();
+        }
+        return props_ExecutionModeInvocations;
+      case LanguageConceptSwitch.ExecutionModeIsoLines:
+        if (props_ExecutionModeIsoLines == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeIsoLines");
+          props_ExecutionModeIsoLines = cpb.create();
+        }
+        return props_ExecutionModeIsoLines;
+      case LanguageConceptSwitch.ExecutionModeLocalSize:
+        if (props_ExecutionModeLocalSize == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeLocalSize");
+          props_ExecutionModeLocalSize = cpb.create();
+        }
+        return props_ExecutionModeLocalSize;
+      case LanguageConceptSwitch.ExecutionModeLocalSizeHing:
+        if (props_ExecutionModeLocalSizeHing == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeLocalSizeHing");
+          props_ExecutionModeLocalSizeHing = cpb.create();
+        }
+        return props_ExecutionModeLocalSizeHing;
+      case LanguageConceptSwitch.ExecutionModeOriginLowerLeft:
+        if (props_ExecutionModeOriginLowerLeft == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeOriginLowerLeft");
+          props_ExecutionModeOriginLowerLeft = cpb.create();
+        }
+        return props_ExecutionModeOriginLowerLeft;
+      case LanguageConceptSwitch.ExecutionModeOriginUpperLeft:
+        if (props_ExecutionModeOriginUpperLeft == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeOriginUpperLeft");
+          props_ExecutionModeOriginUpperLeft = cpb.create();
+        }
+        return props_ExecutionModeOriginUpperLeft;
+      case LanguageConceptSwitch.ExecutionModeOutputLineStrip:
+        if (props_ExecutionModeOutputLineStrip == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeOutputLineStrip");
+          props_ExecutionModeOutputLineStrip = cpb.create();
+        }
+        return props_ExecutionModeOutputLineStrip;
+      case LanguageConceptSwitch.ExecutionModeOutputPoints:
+        if (props_ExecutionModeOutputPoints == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeOutputPoints");
+          props_ExecutionModeOutputPoints = cpb.create();
+        }
+        return props_ExecutionModeOutputPoints;
+      case LanguageConceptSwitch.ExecutionModeOutputTriangleStrip:
+        if (props_ExecutionModeOutputTriangleStrip == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeOutputTriangleStrip");
+          props_ExecutionModeOutputTriangleStrip = cpb.create();
+        }
+        return props_ExecutionModeOutputTriangleStrip;
+      case LanguageConceptSwitch.ExecutionModeOutputVertices:
+        if (props_ExecutionModeOutputVertices == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeOutputVertices");
+          props_ExecutionModeOutputVertices = cpb.create();
+        }
+        return props_ExecutionModeOutputVertices;
+      case LanguageConceptSwitch.ExecutionModePointMode:
+        if (props_ExecutionModePointMode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModePointMode");
+          props_ExecutionModePointMode = cpb.create();
+        }
+        return props_ExecutionModePointMode;
+      case LanguageConceptSwitch.ExecutionModeQuads:
+        if (props_ExecutionModeQuads == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeQuads");
+          props_ExecutionModeQuads = cpb.create();
+        }
+        return props_ExecutionModeQuads;
+      case LanguageConceptSwitch.ExecutionModeSpacingEqual:
+        if (props_ExecutionModeSpacingEqual == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeSpacingEqual");
+          props_ExecutionModeSpacingEqual = cpb.create();
+        }
+        return props_ExecutionModeSpacingEqual;
+      case LanguageConceptSwitch.ExecutionModeSpacingFractionalEven:
+        if (props_ExecutionModeSpacingFractionalEven == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeSpacingFractionalEven");
+          props_ExecutionModeSpacingFractionalEven = cpb.create();
+        }
+        return props_ExecutionModeSpacingFractionalEven;
+      case LanguageConceptSwitch.ExecutionModeSpacingFractionalOdd:
+        if (props_ExecutionModeSpacingFractionalOdd == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeSpacingFractionalOdd");
+          props_ExecutionModeSpacingFractionalOdd = cpb.create();
+        }
+        return props_ExecutionModeSpacingFractionalOdd;
+      case LanguageConceptSwitch.ExecutionModeTriangles:
+        if (props_ExecutionModeTriangles == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeTriangles");
+          props_ExecutionModeTriangles = cpb.create();
+        }
+        return props_ExecutionModeTriangles;
+      case LanguageConceptSwitch.ExecutionModeVertexOrderCcw:
+        if (props_ExecutionModeVertexOrderCcw == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeVertexOrderCcw");
+          props_ExecutionModeVertexOrderCcw = cpb.create();
+        }
+        return props_ExecutionModeVertexOrderCcw;
+      case LanguageConceptSwitch.ExecutionModeVertexOrderCw:
+        if (props_ExecutionModeVertexOrderCw == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeVertexOrderCw");
+          props_ExecutionModeVertexOrderCw = cpb.create();
+        }
+        return props_ExecutionModeVertexOrderCw;
+      case LanguageConceptSwitch.ExecutionModeXfb:
+        if (props_ExecutionModeXfb == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModeXfb");
+          props_ExecutionModeXfb = cpb.create();
+        }
+        return props_ExecutionModeXfb;
+      case LanguageConceptSwitch.ExecutionModel:
+        if (props_ExecutionModel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExecutionModel = cpb.create();
+        }
+        return props_ExecutionModel;
+      case LanguageConceptSwitch.ExecutionModelAnyHitKHR:
+        if (props_ExecutionModelAnyHitKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelAnyHitKHR");
+          props_ExecutionModelAnyHitKHR = cpb.create();
+        }
+        return props_ExecutionModelAnyHitKHR;
+      case LanguageConceptSwitch.ExecutionModelAnyHitNV:
+        if (props_ExecutionModelAnyHitNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelAnyHitNV");
+          props_ExecutionModelAnyHitNV = cpb.create();
+        }
+        return props_ExecutionModelAnyHitNV;
+      case LanguageConceptSwitch.ExecutionModelCallableKHR:
+        if (props_ExecutionModelCallableKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelCallableKHR");
+          props_ExecutionModelCallableKHR = cpb.create();
+        }
+        return props_ExecutionModelCallableKHR;
+      case LanguageConceptSwitch.ExecutionModelCallableNV:
+        if (props_ExecutionModelCallableNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelCallableNV");
+          props_ExecutionModelCallableNV = cpb.create();
+        }
+        return props_ExecutionModelCallableNV;
+      case LanguageConceptSwitch.ExecutionModelClosestHitKHR:
+        if (props_ExecutionModelClosestHitKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelClosestHitKHR");
+          props_ExecutionModelClosestHitKHR = cpb.create();
+        }
+        return props_ExecutionModelClosestHitKHR;
+      case LanguageConceptSwitch.ExecutionModelClosestHitNV:
+        if (props_ExecutionModelClosestHitNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelClosestHitNV");
+          props_ExecutionModelClosestHitNV = cpb.create();
+        }
+        return props_ExecutionModelClosestHitNV;
+      case LanguageConceptSwitch.ExecutionModelFragment:
+        if (props_ExecutionModelFragment == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelFragment");
+          props_ExecutionModelFragment = cpb.create();
+        }
+        return props_ExecutionModelFragment;
+      case LanguageConceptSwitch.ExecutionModelGLCompute:
+        if (props_ExecutionModelGLCompute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelGLCompute");
+          props_ExecutionModelGLCompute = cpb.create();
+        }
+        return props_ExecutionModelGLCompute;
+      case LanguageConceptSwitch.ExecutionModelGeometry:
+        if (props_ExecutionModelGeometry == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelGeometry");
+          props_ExecutionModelGeometry = cpb.create();
+        }
+        return props_ExecutionModelGeometry;
+      case LanguageConceptSwitch.ExecutionModelIntersectionKHR:
+        if (props_ExecutionModelIntersectionKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelIntersectionKHR");
+          props_ExecutionModelIntersectionKHR = cpb.create();
+        }
+        return props_ExecutionModelIntersectionKHR;
+      case LanguageConceptSwitch.ExecutionModelIntersectionNV:
+        if (props_ExecutionModelIntersectionNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelIntersectionNV");
+          props_ExecutionModelIntersectionNV = cpb.create();
+        }
+        return props_ExecutionModelIntersectionNV;
+      case LanguageConceptSwitch.ExecutionModelKernel:
+        if (props_ExecutionModelKernel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelKernel");
+          props_ExecutionModelKernel = cpb.create();
+        }
+        return props_ExecutionModelKernel;
+      case LanguageConceptSwitch.ExecutionModelMeshEXT:
+        if (props_ExecutionModelMeshEXT == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelMeshEXT");
+          props_ExecutionModelMeshEXT = cpb.create();
+        }
+        return props_ExecutionModelMeshEXT;
+      case LanguageConceptSwitch.ExecutionModelMeshNV:
+        if (props_ExecutionModelMeshNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelMeshNV");
+          props_ExecutionModelMeshNV = cpb.create();
+        }
+        return props_ExecutionModelMeshNV;
+      case LanguageConceptSwitch.ExecutionModelMissKHR:
+        if (props_ExecutionModelMissKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelMissKHR");
+          props_ExecutionModelMissKHR = cpb.create();
+        }
+        return props_ExecutionModelMissKHR;
+      case LanguageConceptSwitch.ExecutionModelRayGenerationKHR:
+        if (props_ExecutionModelRayGenerationKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelRayGenerationKHR");
+          props_ExecutionModelRayGenerationKHR = cpb.create();
+        }
+        return props_ExecutionModelRayGenerationKHR;
+      case LanguageConceptSwitch.ExecutionModelRayGenerationNV:
+        if (props_ExecutionModelRayGenerationNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelRayGenerationNV");
+          props_ExecutionModelRayGenerationNV = cpb.create();
+        }
+        return props_ExecutionModelRayGenerationNV;
+      case LanguageConceptSwitch.ExecutionModelTaskNV:
+        if (props_ExecutionModelTaskNV == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelTaskNV");
+          props_ExecutionModelTaskNV = cpb.create();
+        }
+        return props_ExecutionModelTaskNV;
+      case LanguageConceptSwitch.ExecutionModelTesselationControl:
+        if (props_ExecutionModelTesselationControl == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelTesselationControl");
+          props_ExecutionModelTesselationControl = cpb.create();
+        }
+        return props_ExecutionModelTesselationControl;
+      case LanguageConceptSwitch.ExecutionModelTesselationEvaluation:
+        if (props_ExecutionModelTesselationEvaluation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelTesselationEvaluation");
+          props_ExecutionModelTesselationEvaluation = cpb.create();
+        }
+        return props_ExecutionModelTesselationEvaluation;
+      case LanguageConceptSwitch.ExecutionModelVertex:
+        if (props_ExecutionModelVertex == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExecutionModelVertex");
+          props_ExecutionModelVertex = cpb.create();
+        }
+        return props_ExecutionModelVertex;
+      case LanguageConceptSwitch.ExeecutionModePixelCenterInteger:
+        if (props_ExeecutionModePixelCenterInteger == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExeecutionModePixelCenterInteger");
+          props_ExeecutionModePixelCenterInteger = cpb.create();
+        }
+        return props_ExeecutionModePixelCenterInteger;
+      case LanguageConceptSwitch.ExtensionInstruction:
+        if (props_ExtensionInstruction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExtensionInstruction = cpb.create();
+        }
+        return props_ExtensionInstruction;
+      case LanguageConceptSwitch.FunctionDeclaration:
+        if (props_FunctionDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FunctionDeclaration");
+          props_FunctionDeclaration = cpb.create();
+        }
+        return props_FunctionDeclaration;
+      case LanguageConceptSwitch.FunctionDefinition:
+        if (props_FunctionDefinition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FunctionDefinition");
+          props_FunctionDefinition = cpb.create();
+        }
+        return props_FunctionDefinition;
       case LanguageConceptSwitch.FunctionTerminationInstruction:
         if (props_FunctionTerminationInstruction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_FunctionTerminationInstruction = cpb.create();
         }
         return props_FunctionTerminationInstruction;
+      case LanguageConceptSwitch.GlobalVariableDeclaration:
+        if (props_GlobalVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Storage Class is not Function");
+          props_GlobalVariableDeclaration = cpb.create();
+        }
+        return props_GlobalVariableDeclaration;
       case LanguageConceptSwitch.HeaderBlock:
         if (props_HeaderBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -981,6 +1637,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Id = cpb.create();
         }
         return props_Id;
+      case LanguageConceptSwitch.ImageFormat:
+        if (props_ImageFormat == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ImageFormat = cpb.create();
+        }
+        return props_ImageFormat;
+      case LanguageConceptSwitch.ImageFormatR32f:
+        if (props_ImageFormatR32f == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageFormatR32f");
+          props_ImageFormatR32f = cpb.create();
+        }
+        return props_ImageFormatR32f;
+      case LanguageConceptSwitch.ImageFormatRgba16f:
+        if (props_ImageFormatRgba16f == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageFormatRgba16f");
+          props_ImageFormatRgba16f = cpb.create();
+        }
+        return props_ImageFormatRgba16f;
+      case LanguageConceptSwitch.ImageFormatRgba32f:
+        if (props_ImageFormatRgba32f == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageFormatRgba32f");
+          props_ImageFormatRgba32f = cpb.create();
+        }
+        return props_ImageFormatRgba32f;
+      case LanguageConceptSwitch.ImageFormatRgba8:
+        if (props_ImageFormatRgba8 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageFormatRgba8");
+          props_ImageFormatRgba8 = cpb.create();
+        }
+        return props_ImageFormatRgba8;
+      case LanguageConceptSwitch.ImageFormatUnkown:
+        if (props_ImageFormatUnkown == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ImageFormatUnkown");
+          props_ImageFormatUnkown = cpb.create();
+        }
+        return props_ImageFormatUnkown;
       case LanguageConceptSwitch.IncomingCallableDataKHR:
         if (props_IncomingCallableDataKHR == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1005,10 +1702,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Literal:
         if (props_Literal == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Literal");
           props_Literal = cpb.create();
         }
         return props_Literal;
+      case LanguageConceptSwitch.LiteralNumeric:
+        if (props_LiteralNumeric == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LiteralNumeric");
+          props_LiteralNumeric = cpb.create();
+        }
+        return props_LiteralNumeric;
+      case LanguageConceptSwitch.LiteralString:
+        if (props_LiteralString == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LiteralString");
+          props_LiteralString = cpb.create();
+        }
+        return props_LiteralString;
       case LanguageConceptSwitch.LoopHeader:
         if (props_LoopHeader == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1016,6 +1726,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_LoopHeader = cpb.create();
         }
         return props_LoopHeader;
+      case LanguageConceptSwitch.MemoryModel:
+        if (props_MemoryModel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MemoryModel = cpb.create();
+        }
+        return props_MemoryModel;
+      case LanguageConceptSwitch.MemoryModelGLSL450:
+        if (props_MemoryModelGLSL450 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MemoryModelGLSL450");
+          props_MemoryModelGLSL450 = cpb.create();
+        }
+        return props_MemoryModelGLSL450;
+      case LanguageConceptSwitch.MemoryModelOpenCL:
+        if (props_MemoryModelOpenCL == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MemoryModelOpenCL");
+          props_MemoryModelOpenCL = cpb.create();
+        }
+        return props_MemoryModelOpenCL;
+      case LanguageConceptSwitch.MemoryModelSimple:
+        if (props_MemoryModelSimple == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MemoryModelSimple");
+          props_MemoryModelSimple = cpb.create();
+        }
+        return props_MemoryModelSimple;
+      case LanguageConceptSwitch.MemoryModelVulkan:
+        if (props_MemoryModelVulkan == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MemoryModelVulkan");
+          props_MemoryModelVulkan = cpb.create();
+        }
+        return props_MemoryModelVulkan;
+      case LanguageConceptSwitch.MemoryModelVulkanKHR:
+        if (props_MemoryModelVulkanKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MemoryModelVulkanKHR");
+          props_MemoryModelVulkanKHR = cpb.create();
+        }
+        return props_MemoryModelVulkanKHR;
       case LanguageConceptSwitch.MemoryObject:
         if (props_MemoryObject == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1080,13 +1831,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NonSemanticInstruction = cpb.create();
         }
         return props_NonSemanticInstruction;
-      case LanguageConceptSwitch.NumericalName:
-        if (props_NumericalName == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("NumericalName");
-          props_NumericalName = cpb.create();
-        }
-        return props_NumericalName;
       case LanguageConceptSwitch.Object:
         if (props_Object == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1297,6 +2041,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OpExtInstImport = cpb.create();
         }
         return props_OpExtInstImport;
+      case LanguageConceptSwitch.OpExtInstWithForwardReftsKHR:
+        if (props_OpExtInstWithForwardReftsKHR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OpExtInstWithForwardReftsKHR");
+          props_OpExtInstWithForwardReftsKHR = cpb.create();
+        }
+        return props_OpExtInstWithForwardReftsKHR;
       case LanguageConceptSwitch.OpExtension:
         if (props_OpExtension == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1346,13 +2097,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OpFOrdNotEqual = cpb.create();
         }
         return props_OpFOrdNotEqual;
-      case LanguageConceptSwitch.OpFUnorcGreaterThanEqual:
-        if (props_OpFUnorcGreaterThanEqual == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("OpFUnorcGreaterThanEqual");
-          props_OpFUnorcGreaterThanEqual = cpb.create();
-        }
-        return props_OpFUnorcGreaterThanEqual;
       case LanguageConceptSwitch.OpFUnordEqual:
         if (props_OpFUnordEqual == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1367,6 +2111,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OpFUnordGreaterThan = cpb.create();
         }
         return props_OpFUnordGreaterThan;
+      case LanguageConceptSwitch.OpFUnordGreaterThanEqual:
+        if (props_OpFUnordGreaterThanEqual == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OpFUnordGreaterThanEqual");
+          props_OpFUnordGreaterThanEqual = cpb.create();
+        }
+        return props_OpFUnordGreaterThanEqual;
       case LanguageConceptSwitch.OpFUnordLessThan:
         if (props_OpFUnordLessThan == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1493,6 +2244,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OpLessOrGreater = cpb.create();
         }
         return props_OpLessOrGreater;
+      case LanguageConceptSwitch.OpLine:
+        if (props_OpLine == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OpLine");
+          props_OpLine = cpb.create();
+        }
+        return props_OpLine;
       case LanguageConceptSwitch.OpLoad:
         if (props_OpLoad == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1577,6 +2335,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OpName = cpb.create();
         }
         return props_OpName;
+      case LanguageConceptSwitch.OpNoLine:
+        if (props_OpNoLine == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OpNoLine");
+          props_OpNoLine = cpb.create();
+        }
+        return props_OpNoLine;
       case LanguageConceptSwitch.OpNot:
         if (props_OpNot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1885,6 +2650,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OpTypeSampler = cpb.create();
         }
         return props_OpTypeSampler;
+      case LanguageConceptSwitch.OpTypeStruct:
+        if (props_OpTypeStruct == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OpTypeStruct");
+          props_OpTypeStruct = cpb.create();
+        }
+        return props_OpTypeStruct;
       case LanguageConceptSwitch.OpTypeVariable:
         if (props_OpTypeVariable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1975,6 +2747,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Result = cpb.create();
         }
         return props_Result;
+      case LanguageConceptSwitch.Scalar:
+        if (props_Scalar == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Scalar");
+          props_Scalar = cpb.create();
+        }
+        return props_Scalar;
       case LanguageConceptSwitch.SelectionHeader:
         if (props_SelectionHeader == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1982,6 +2761,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SelectionHeader = cpb.create();
         }
         return props_SelectionHeader;
+      case LanguageConceptSwitch.Signedness:
+        if (props_Signedness == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Signedness = cpb.create();
+        }
+        return props_Signedness;
+      case LanguageConceptSwitch.SignednessSigned:
+        if (props_SignednessSigned == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SignednessSigned");
+          props_SignednessSigned = cpb.create();
+        }
+        return props_SignednessSigned;
+      case LanguageConceptSwitch.SignednessUnsigned:
+        if (props_SignednessUnsigned == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SignednessUnsigned");
+          props_SignednessUnsigned = cpb.create();
+        }
+        return props_SignednessUnsigned;
       case LanguageConceptSwitch.StorageClass:
         if (props_StorageClass == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -2016,6 +2815,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StorageClassFunction = cpb.create();
         }
         return props_StorageClassFunction;
+      case LanguageConceptSwitch.StorageClassGeneric:
+        if (props_StorageClassGeneric == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StorageClassGeneric");
+          props_StorageClassGeneric = cpb.create();
+        }
+        return props_StorageClassGeneric;
       case LanguageConceptSwitch.StorageClassHitAttributeKHR:
         if (props_StorageClassHitAttributeKHR == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

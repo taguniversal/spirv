@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="eecx5094y0j40wogwhdgakfepspi1xa">
-  <files names="EditorAspectDescriptorImpl.java:Module_Editor.java:Module_EditorBuilder_a.java" />
+<product version="3" modelHash="811aehm2wo4b7yxf945y2ptzum3f2pl">
+  <files names="EditorAspectDescriptorImpl.java:FunctionDeclaration_Editor.java:FunctionDeclaration_EditorBuilder_a.java:FunctionDefinition_Editor.java:FunctionDefinition_EditorBuilder_a.java:Id_Editor.java:Id_EditorBuilder_a.java:Module_Editor.java:Module_EditorBuilder_a.java:OpCapability_Editor.java:OpCapability_EditorBuilder_a.java:OpEntryPoint_Editor.java:OpEntryPoint_EditorBuilder_a.java:OpExtInstImport_Editor.java:OpExtInstImport_EditorBuilder_a.java:OpExtInst_Editor.java:OpExtInst_EditorBuilder_a.java:OpExtension_Editor.java:OpExtension_EditorBuilder_a.java:OpMemoryModel_Editor.java:OpMemoryModel_EditorBuilder_a.java:OpTypePointer_Editor.java:OpTypePointer_EditorBuilder_a.java:OpTypeStruct_Editor.java:OpTypeStruct_EditorBuilder_a.java:OpVariable_Editor.java:OpVariable_EditorBuilder_a.java" />
 </product>
 
